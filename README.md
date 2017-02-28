@@ -1,10 +1,10 @@
-# phlib/mb-guzzle-client
+# phlib/messagebird-guzzle-client
 
-[![Build Status](https://img.shields.io/travis/phlib/mb-guzzle-client/master.svg)](https://travis-ci.org/phlib/mb-guzzle-client)
-[![Codecov](https://img.shields.io/codecov/c/github/phlib/mb-guzzle-client.svg)](https://codecov.io/gh/phlib/mb-guzzle-client)
-[![Latest Stable Version](https://img.shields.io/packagist/v/phlib/mb-guzzle-client.svg)](https://packagist.org/packages/phlib/mb-guzzle-client)
-[![Total Downloads](https://img.shields.io/packagist/dt/phlib/mb-guzzle-client.svg)](https://packagist.org/packages/phlib/mb-guzzle-client)
-![Licence](https://img.shields.io/github/license/phlib/mb-guzzle-client.svg?style=flat-square)
+[![Build Status](https://img.shields.io/travis/phlib/messagebird-guzzle-client/master.svg)](https://travis-ci.org/phlib/messagebird-guzzle-client)
+[![Codecov](https://img.shields.io/codecov/c/github/phlib/messagebird-guzzle-client.svg)](https://codecov.io/gh/phlib/messagebird-guzzle-client)
+[![Latest Stable Version](https://img.shields.io/packagist/v/phlib/messagebird-guzzle-client.svg)](https://packagist.org/packages/phlib/messagebird-guzzle-client)
+[![Total Downloads](https://img.shields.io/packagist/dt/phlib/messagebird-guzzle-client.svg)](https://packagist.org/packages/phlib/messagebird-guzzle-client)
+![Licence](https://img.shields.io/github/license/phlib/messagebird-guzzle-client.svg?style=flat-square)
 
 MessageBird Guzzle HTTP client implementation.
 
