@@ -16,11 +16,11 @@ Via Composer
 $ composer require phlib/messagebird-guzzle-client
 ```
 
-## Creating a Client
+## Creating a HTTP Client
 
 ``` php
 <?php
-use Phlib\MbGuzzleClient\Client;
+use Phlib\MbGuzzleClient\Http\Client;
 use GuzzleHttp\Client as GuzzleClient;
 
 $guzzleClient = new GuzzleClient($options = []);
@@ -28,7 +28,7 @@ $httpClient = new Client(MessageBird\Client::ENDPOINT, $guzzleClient);
 
 ```
 
-## Using the client with MessageBird
+## Using the HTTP Client with MessageBird
 
 ``` php
 
