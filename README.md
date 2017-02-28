@@ -13,7 +13,7 @@ MessageBird Guzzle HTTP client implementation.
 Via Composer
 
 ``` bash
-$ composer require phlib/mb-guzzle-client
+$ composer require phlib/messagebird-guzzle-client
 ```
 
 ## Creating a Client
