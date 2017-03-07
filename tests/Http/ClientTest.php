@@ -39,7 +39,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     {
         $response = $this->prophesize(ResponseInterface::class);
         $this->guzzle
-            ->request(Argument::any(), Argument::any(), Argument::any())
+            ->request(Argument::cetera())
             ->shouldBeCalled()
             ->willReturn($response);
         $client = $this->create();
@@ -48,13 +48,20 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
     public function testAuthenticationKeyIsSet()
     {
+        $accessKey = 'ThisIsMySecret';
+        $checkCallback = function ($options) use ($accessKey) {
+            return array_key_exists('headers', $options) &&
+                array_key_exists('Authorization', $options['headers']) &&
+                $options['headers']['Authorization'] == "AccessKey {$accessKey}";
+        };
+
         $response = $this->prophesize(ResponseInterface::class);
         $this->guzzle
-            ->request(Argument::any(), Argument::any(), Argument::containingString('AccessKey'))
+            ->request(Argument::any(), Argument::any(), Argument::that($checkCallback))
             ->shouldBeCalled()
             ->willReturn($response);
-        $client = $this->create();
-        $client->performHttpRequest('method', 'resource');
+        $this->create($accessKey)
+            ->performHttpRequest('method', 'resource');
     }
 
     public function testContainsBodyForPostEtalWhenPresent()
@@ -80,14 +87,14 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param bool $withAuth Default to true
+     * @param string $secretKey
      * @return Client
      */
-    protected function create($withAuth = true)
+    protected function create($secretKey = 'NoneSet')
     {
         $client = new Client('http://base.url/', $this->guzzle->reveal());
-        if ($withAuth) {
-            $client->setAuthentication(new Authentication('AccessKey'));
+        if ($secretKey) {
+            $client->setAuthentication(new Authentication($secretKey));
         }
         return $client;
     }
