@@ -8,6 +8,9 @@
 
 MessageBird Guzzle HTTP client implementation.
 
+Allows you to replace the Message Bird HTTP Client with an implementation that uses the Guzzle HTTP Client. This means
+there is a more control over certain options in the client.
+
 ## Install
 
 Via Composer
